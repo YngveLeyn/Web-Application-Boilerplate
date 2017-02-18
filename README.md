@@ -7,6 +7,7 @@
             <li>HTML5
                 <ul>
                     <li>Structure</li>
+                    <li>Favicon package</li>
                     <li>Browser upgrade warning</li>
                 </ul>
             </li>

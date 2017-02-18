@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var bs = require('browser-sync').create();
+var cleanCSS = require('gulp-clean-css');
+
 
 gulp.task('browser-sync', ['sass'], function() {
     bs.init({
@@ -17,8 +19,15 @@ gulp.task('sass', function () {
                 .pipe(bs.reload({stream: true}));
 });
 
+gulp.task('minify-css', function() {
+  return gulp.src('css/*.css')
+    .pipe(cleanCSS({compatibility: 'ie8'}))
+    .pipe(gulp.dest('css/min'));
+});
+
 //Watch task
 gulp.task('default', ['browser-sync'], function () {
     gulp.watch("scss/**/*.scss", ['sass']);
+    gulp.watch("css/**/*.css", ['minify-css']);
     gulp.watch("*.html").on('change', bs.reload);
 });
