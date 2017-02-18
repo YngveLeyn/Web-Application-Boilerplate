@@ -27,6 +27,7 @@
                 <ul>
                     <li>Sass compilation</li>
                     <li>Browser Sync</li>
+                    <li>CSS-clean minify</li>
                 </ul>
             </li>
         </ul>        
