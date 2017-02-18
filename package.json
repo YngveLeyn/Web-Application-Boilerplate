@@ -1,12 +1,12 @@
 {
   "name": "web-application-boilerplate",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Web Application Boilerplate",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Yngve Leyn",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1",
