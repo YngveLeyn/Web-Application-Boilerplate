@@ -33,5 +33,10 @@ gulp.task('minify-css', function() {
 gulp.task('default', ['browser-sync'], function () {
     gulp.watch("scss/**/*.scss", ['sass']);
     gulp.watch("css/**/*.css", ['minify-css']);
-    gulp.watch("*.html").on('change', bs.reload);
+    bs.watch("*.html").on('change', bs.reload);
+    bs.watch(['./css/**/*.css'], function (event, file) {
+    if (event === "change" || event === "add") {
+      bs.reload();
+    }
+  });
 });
